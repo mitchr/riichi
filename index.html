@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"></style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <script src="js/tile.js"></script>
+  <script src="js/hand.js"></script>
+  <script src="js/graph.js"></script>
+</head>
+<body>
+
+<div id="config" class="container">
+  <div>
+    <button id="calculate">Calculate Hand</button>
+  </div>
+  <div>
+    <button id="clear">Clear Hand</button>
+  </div>
+  <div>
+    <input type="checkbox" id="open">
+    <label for="open">Open?</label>
+  </div>
+  <div>
+    <label for="seatWind">Seat Wind:</label>
+    <select id="seatWind">
+      <option value="east">East</option>
+      <option value="south">South</option>
+      <option value="west">West</option>
+      <option value="north">North</option>
+    </select>
+  </div>
+  <div>
+    <!-- also called prevailing wind -->
+    <label for="roundWind">Round Wind:</label>
+    <select id="roundWind">
+      <option value="east">East</option>
+      <option value="south">South</option>
+      <option value="west">West</option>
+      <option value="north">North</option>
+    </select>
+  </div>
+</div>
+
+<div id="hand" class="container"></div>
+
+<div class="container">
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin1.svg">
+    <div class="marking">1</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin2.svg">
+    <div class="marking">2</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin3.svg">
+    <div class="marking">3</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin4.svg">
+    <div class="marking">4</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin5.svg">
+    <div class="marking">5</div>
+  </div>
+  <!-- <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin5-Dora.svg">
+    <div class="marking">5</div>
+  </div> -->
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin6.svg">
+    <div class="marking">6</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin7.svg">
+    <div class="marking">7</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin8.svg">
+    <div class="marking">8</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pin9.svg">
+    <div class="marking">9</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou1.svg">
+    <div class="marking">1</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou2.svg">
+    <div class="marking">2</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou3.svg">
+    <div class="marking">3</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou4.svg">
+    <div class="marking">4</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou5.svg">
+    <div class="marking">5</div>
+  </div>
+  <!-- <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou5-Dora.svg">
+  </div> -->
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou6.svg">
+    <div class="marking">6</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou7.svg">
+    <div class="marking">7</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou8.svg">
+    <div class="marking">8</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Sou9.svg">
+    <div class="marking">9</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man1.svg">
+    <div class="marking">1</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man2.svg">
+    <div class="marking">2</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man3.svg">
+    <div class="marking">3</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man4.svg">
+    <div class="marking">4</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man5.svg">
+    <div class="marking">5</div>
+  </div>
+  <!-- <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man5-Dora.svg">
+  </div> -->
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man6.svg">
+    <div class="marking">6</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man7.svg">
+    <div class="marking">7</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man8.svg">
+    <div class="marking">8</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Man9.svg">
+    <div class="marking">9</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Ton.svg">
+    <div class="marking">E</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Nan.svg">
+    <div class="marking">S</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Shaa.svg">
+    <div class="marking">W</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Pei.svg">
+    <div class="marking">N</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Haku.svg">
+    <div class="marking">Wh</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Hatsu.svg">
+    <div class="marking">Gr</div>
+  </div>
+  <div class="tile">
+    <img class="reverse" src="./Regular/Back.svg">
+    <img class="bg" src="./Regular/Front.svg">
+    <img class="face" src="./Regular/Chun.svg">
+    <div class="marking">R</div>
+  </div>
+</div>
+
+</body>
+</html>
